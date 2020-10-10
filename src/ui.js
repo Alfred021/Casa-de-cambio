@@ -1,23 +1,13 @@
 /* eslint-disable linebreak-style */
-async function getRates(baseCurrency = 'EUR', date = 'latest') {
-  const URL = 'https://api.exchangeratesapi.io';
-  const apiResp = await fetch(`${URL}/${date}?base=${baseCurrency}`);
-  const apiRespJson = await apiResp.json();
-  return apiRespJson.rates;
-}
+import updateData from './index.js';
 
-async function getCurrencies() {
-  const apiRespRates = await getRates();
-  return Object.keys(apiRespRates).concat('EUR');
-}
-
-function statusShowing() {
-  // eslint-disable-next-line no-multi-assign
-  const $status = document.querySelector('#Rates tbody').innerHTML = 'Loading...';
+export function statusShowing() {
+  const $status = document.querySelector('#Rates tbody');
+  $status.innerHTML = 'Loading....';
   return $status;
 }
 
-function configureInputDate() {
+export function configureInputDate() {
   const $date = document.querySelector('#date-input');
   const todaysDate = new Date();
   const year = todaysDate.getFullYear();
@@ -28,8 +18,8 @@ function configureInputDate() {
   $date.addEventListener('change', updateData);
 }
 
-function listOfCurrencies(currency) {
-  const $list = document.querySelector('.dropdown-menu')
+export function listOfCurrencies(currency) {
+  const $list = document.querySelector('.dropdown-menu');
   currency.forEach((baseCurrency) => {
     const $item = document.createElement('a');
     $item.href = '#';
@@ -48,23 +38,9 @@ function listOfCurrencies(currency) {
   });
 }
 
-function getSelectedCurrency() {
-  const $activeCurrency = document.querySelector('.dropdown-item.active');
-  if ($activeCurrency) {
-    return document.querySelector('.dropdown-item.active').dataset.baseCurrency;
-  }
-  return undefined;
-}
-
-function getSelectedDate() {
-  const $dateSelected = document.querySelector('#date-input').value;
-  return $dateSelected || undefined;
-}
-
-function showCurrencyRates(currencyRates) {
+export function showCurrencyRates(currencyRates) {
   const $currencyRates = document.querySelector('#Rates tbody');
   $currencyRates.innerHTML = '';
-
   Object.keys(currencyRates).forEach((currency) => {
     const $row = document.createElement('tr');
     const $currency = document.createElement('td');
@@ -77,16 +53,15 @@ function showCurrencyRates(currencyRates) {
   });
 }
 
-async function setUp() {
-  const currencies = await getCurrencies();
-  listOfCurrencies(currencies);
-  configureInputDate();
+export function getSelectedDate() {
+  const $dateSelected = document.querySelector('#date-input').value;
+  return $dateSelected || undefined;
 }
 
-async function updateData() {
-  statusShowing();
-  const currencyRates = await getRates(getSelectedCurrency(), getSelectedDate())
-  showCurrencyRates(currencyRates);
+export function getSelectedCurrency() {
+  const $activeCurrency = document.querySelector('.dropdown-item.active');
+  if ($activeCurrency) {
+    return document.querySelector('.dropdown-item.active').dataset.baseCurrency;
+  }
+  return undefined;
 }
-
-setUp();
