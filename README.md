@@ -5,6 +5,5 @@
 • HTML
 • CSS
 • Vanilla Javascript
-• PokeAPI (https://pokeapi.co) 
+• Exchange Rates API (https://exchangeratesapi.io/) 
 • Eslint, para analisis, estilos y reglas del codigo.
-
