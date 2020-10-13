@@ -9,3 +9,4 @@
 - Eslint, para analisis, estilos y reglas del codigo.
 - Bootstrap, para estilos basicos
 - NPM para dependencias, abrir la terminal y ejecutar 'npm install'.
+- Cypress para End to End Testing.

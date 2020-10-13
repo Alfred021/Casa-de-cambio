@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable import/no-cycle */
+
 import updateData from './index.js';
 
 export function statusShowing() {
@@ -19,10 +21,10 @@ export function configureInputDate() {
 }
 
 export function listOfCurrencies(currency) {
-  const $list = document.querySelector('.dropdown-menu');
+  const $list = document.querySelector('.dropdown-menu dropdown-menu-right');
   currency.forEach((baseCurrency) => {
-    const $item = document.createElement('a');
-    $item.href = '#';
+    const $item = document.createElement('button');
+    $item.type = 'button';
     $item.classList.add('dropdown-item');
     $item.textContent = baseCurrency;
     $item.dataset.baseCurrency = baseCurrency;

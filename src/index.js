@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable import/no-cycle */
+
 import { getRates, getCurrencies } from './exchange.js';
 import {
   listOfCurrencies,
