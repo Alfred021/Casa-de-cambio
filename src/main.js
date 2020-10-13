@@ -55,7 +55,7 @@ function configureInputDate() {
 }
 
 function listOfCurrencies(currency) {
-  const $list = document.querySelector('.dropdown-menu dropdown-menu-right');
+  const $list = document.querySelector('.dropdown-menu dropdown-menu-lg-right');
   currency.forEach((baseCurrency) => {
     const $item = document.createElement('button');
     $item.classList.add('dropdown-item');

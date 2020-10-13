@@ -5,10 +5,10 @@ describe('Open Website', () => {
   });
 
   it('shows currencies', () => {
-    const $dropdownMenu = cy.get('#dropdownMenuLink')
+    const $dropdownMenu = cy.get('#dropdownMenu2')
       .click()
       .then(($dropdownMenu) => {
-        cy.get('.dropdown-menu')
+        cy.get('.dropdown-menu.dropdown-menu-lg-right')
           .find('.dropdown-item').should('have.length', 33);
       });
   });
