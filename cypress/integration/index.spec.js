@@ -30,7 +30,7 @@ describe('casa de cambio', () => {
     cy.get('#dropdownMenu2')
       .click()
       .then(() => {
-        cy.get('.dropdown-menu.dropdown-menu-lg-right')
+        cy.get('.dropdown-menu.dropdown-menu-dark.dropdown-menu-end')
           .find('.dropdown-item').should('have.length', 33);
       });
   });

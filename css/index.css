@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden
+}
+
 label {
     text-align: center;
     font-weight: bold;
@@ -7,4 +11,27 @@ h1 {
     padding-top: 15px;
     padding-bottom: 20px;
     text-align: center;
+}
+
+header {
+    background-color: rgb(10, 20, 110);
+    color: white;
+    padding-bottom: 0.5em;
+    width: 100%;
+    top: 0;
+}
+
+.reference-rates {
+    margin-top: 1em;
+    width: 100%;
+}
+
+#Currency {
+    text-align: center;
+}
+
+@media screen and (max-width: 340px) {
+    #dropdownMenu2 {
+        font-size: 95%;
+    }
 }

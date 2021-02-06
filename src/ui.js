@@ -21,7 +21,8 @@ export function configureInputDate() {
 }
 
 export function listOfCurrencies(currency) {
-  const $list = document.querySelector('.dropdown-menu.dropdown-menu-lg-right');
+  const $list = document.querySelector('.dropdown-menu.dropdown-menu-dark.dropdown-menu-end');
+  const $dropdown = document.querySelector('.btn.btn-secondary.dropdown-toggle');
   currency.forEach((baseCurrency) => {
     const $item = document.createElement('button');
     $item.type = 'button';
@@ -34,6 +35,7 @@ export function listOfCurrencies(currency) {
         $activeElement.classList.remove('active');
       }
       $item.classList.add('active');
+      $dropdown.textContent = `Base Currency: ${$item.innerHTML}`;
       updateData();
     });
     $list.appendChild($item);
