@@ -1,0 +1,30 @@
+{
+  "name": "casa-de-cambio",
+  "version": "1.0.0",
+  "description": "Casa de cambio, usando api.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "http-server",
+    "cypress-open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alfred021/Casa-de-cambio.git"
+  },
+  "author": "Alfredo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alfred021/Casa-de-cambio/issues"
+  },
+  "homepage": "https://github.com/Alfred021/Casa-de-cambio#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  },
+  "devDependencies": {
+    "cypress": "^5.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}
